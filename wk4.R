@@ -17,15 +17,8 @@ shape2 <- merge(shape,mycsv, by = "ISO")
 
 tmap_mode("plot")
 
-install.packages("RColorBrewer")
-
-pal <- brewer.pal(6,"BuGn")
-pal
-
-display.brewer.pal(6,"BuGn")
-
 map01 <- tm_shape(shape2)+
-  tm_fill("dif_2019_2010",palette="BuGn" ,n = 4,title="Changes in GII 2010-2019",textNA="No data")+
+  tm_fill("dif_2019_2010",palette="div" ,n = 4,title="Changes in GII 2010-2019",textNA="No data")+
   tm_borders(col = "grey40", lwd = .3, lty = "solid")+
   tm_layout(inner.margins = c(0.02, 0, 0.02, 0),
            legend.position = c("left","bottom"),
@@ -40,9 +33,3 @@ map01 <- tm_shape(shape2)+
 map01
 
 tmap_save(map01,"map01.jpeg",dpi=1000)
-
-install.packages("shiny")
-install.packages("shinyjs")
-library(shiny)
-library(shinyjs)
-palette_explorer()
