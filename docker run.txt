@@ -1,5 +1,0 @@
-docker pull jreades/sds:2022
-
-cd  /mnt/c/Users/zhany/CASA
-
-docker run --rm -d --name sds2022 -p 8888:8888 -v "$(pwd):/home/jovyan/work" jreades/sds:2022 start.sh jupyter lab --LabApp.password='' --ServerApp.password='' --NotebookApp.token=''
